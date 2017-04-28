@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'),
-Schema = mongoose.Schema;
+ Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
   body: {type: String, required:true},
@@ -15,4 +15,4 @@ const CommentSchema = new Schema({
   upvotes: { type: Number, min: 0, max: 100, default:0 }
  });
 
-export default mongoose.model('posts', ReviewSchema);
+export default mongoose.model('reviews', ReviewSchema);

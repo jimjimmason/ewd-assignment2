@@ -1,17 +1,35 @@
 import express from 'express';
 import reviewsAPI from './reviews';
+import mongoose from 'mongoose';
+import Review from './reviewsModel';
+import config from './../../config';
 
 const router = express.Router();
 
 // get all reviews
 router.get('/', (req, res) => {
-  console.log("/api/reviews/index.js request all Reviews");
-  const reviews = reviewsAPI.getAll();
-  console.log(reviews);
-  res.send({ reviews: reviews });
+  Review.find((err, reviews) => {
+    if(err) { return handleError(res, err); }
+    return res.send(reviews);
+  });
 });
 
+//Add a review
+router.post('/', (req, res) => {
 
+     const newReview = req.body;
+    if (newReview){
+           Review.create(newReview, (err, review) => {
+              if(err) { return handleError(res, err); }
+                 return res.status(201).send({review});
+          });
+      }else{
+         return handleError(res, err);
+      }
+     
+});
+
+/*
 
 //Add a review
 router.post('/', (req, res) => {
@@ -90,4 +108,5 @@ router.post('/:reviewId/comments/:commentId/upvote', (req, res) => {
              
 });
 
+*/
 export default router;

@@ -8,6 +8,7 @@ import reviewsRouter from './api/reviews';
 import body_parser from 'body-parser';
 import mongoose from 'mongoose';
 import {loadEvents} from './eventsData';
+import {loadReviews} from './reviewsData';
 
 const server = express();
 
@@ -18,6 +19,7 @@ mongoose.createConnection(config.mongoDb);
 //pupulate DB with sample data
 if (config.seedDb) {
 	loadEvents();
+	loadReviews();
 }
 
 //configure body-parser
