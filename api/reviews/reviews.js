@@ -37,6 +37,7 @@ import _ from 'lodash';
 
      const reviewsAPI = {
          getAll : () => {
+            console.log("/api/reviews/reviews.js getAll");
             return reviews ;
           },
          add : (t,l) => {

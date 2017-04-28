@@ -5,9 +5,10 @@ const router = express.Router();
 
 // get all reviews
 router.get('/', (req, res) => {
-  console.log("request all Reviews");
+  console.log("/api/reviews/index.js request all Reviews");
   const reviews = reviewsAPI.getAll();
-  res.send({ review: reviews });
+  console.log(reviews);
+  res.send({ reviews: reviews });
 });
 
 
