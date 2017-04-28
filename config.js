@@ -9,6 +9,8 @@ export const logStars = function(message) {
 };
 
 export default {
+	mongoDb: 'mongodb://localhost:27017/TriathlonApp',
+	seedDb: true,
   port: env.PORT || 8080,
   host: env.HOST || 'localhost',
   get serverUrl(){

@@ -1,12 +1,12 @@
 {
-  "name": "node_lab1",
+  "name": "ewd-assignment2",
   "version": "1.0.0",
-  "description": "node lab 1",
+  "description": "WIT: Enterprise Web Developmetn - Assignment 2",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore HackerNews/* --exec babel-node server.js"
+    "start": "nodemon --ignore TriathlonApp/* --exec babel-node server.js"
   },
-  "author": "jimjimmason",
+  "author": "James Mason",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.1",

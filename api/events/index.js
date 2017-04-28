@@ -1,63 +1,76 @@
 import express from 'express';
-import eventsAPI from './events';
+//import eventsAPI from './events';
 import _ from 'lodash';
+import mongoose from 'mongoose';
+import Event from './eventsModel';
+import config from './../../config';
+
+//connect to database
+mongoose.connect(config.mongoDb);
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const events = eventsAPI.getAllEvents();
-  res.send({ events: events });
+ Event.find((err, events) => {
+    if(err) { return handleError(res, err); }
+    return res.send(events);
+  });
 });
 
-//get event
+// get an event
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  const event = eventsAPI.getEvent(id);
-
-   if(event){
-           return   res.status(200).send(event);
-          }
-          return    res.status(404).send({message: `Unable to find Event ${id}`}); 
-            
-            
+  Event.findById(id, function (err, event) { 
+    if(err) { return handleError(res, err); }
+    return res.send({event});
+  });
 });
 
-//add Event
+//add event
 router.post('/', (req, res) => {
-	console.log("requst Post newEvent");
   const newEvent = req.body;
-  let result = null
   if (newEvent){
-  	result = eventsAPI.addEvent(
-  		newEvent.eventDate,
-  		newEvent.eventName,
-  		newEvent.eventType,
-  		newEvent.distance,
-  		newEvent.series,
-  		newEvent.ageGroup,
-  		newEvent.county,
-  		newEvent.eventURL
-  	);
+    Event.create(newEvent, (err, event) => {
+      if(err) { return handleError(res, err); }
+      return res.status(201).send({event});
+    });
+  }else{
+    return handleError(res, err);
   }
-  if (result > 0) {  
-  	return res.status(201).send({message: "Event Created", id:result});
-  }
-   	return res.status(400).send({message: "Unable to find Event in request. No Event Found in body"});
-  
 });
 
-
-//delete event
+//Delete an event
 router.delete('/:id', (req, res) => {
-	console.log("requst Delete Event");
-  const id = req.params.id;
-  const elements = eventsAPI.deleteEvent(id);
-	  if (elements){
-	   	res.status(200).send({message: "Event deleted"});
-	  }else{
-        res.status(400).send({message: "Unable to find Event. No event Deleted"}) ;
-	  }
+   let key = req.params.id;
+   Event.findById(key, (err, event)=> {
+    if(err) { return res.status(400).send(err);}
+    if(!event) { return res.send(404); }
+    event.remove(err => {
+      if(err) { return handleError(res, err); }
+      return res.send(event);
+    });
+  });   
 });
+
+
+//Update an Event
+router.put('/:id', (req, res) => {
+   let key = req.params.id;
+   let updateEvent = req.body;
+
+   if(updateEvent._id) { delete updateEvent._id; }
+   Event.findById(req.params.id,  (err, event) => {
+      if (err) { return handleError(res, err); }
+        if(!event) { return res.send(404); }
+            const updated = _.merge(event, req.body);
+            updated.save((err) => {
+                  if (err) { return handleError(res, err); }
+                          return res.send(event);
+            });
+      });
+});
+
+/*
 
 //add addMemberToEventParticipants
 router.post('/:id', (req, res) => {
@@ -74,30 +87,7 @@ router.post('/:id', (req, res) => {
              
 });
 
-router.put('/:id', (req, res) => {
-  console.log("requst Post updateEvent");
-  const updateEvent = req.body;
-  let result = false;
-  if (updateEvent){
-    result = eventsAPI.updateEvent(
-      updateEvent.id,
-      updateEvent.eventDate,
-      updateEvent.eventName,
-      updateEvent.eventType,
-      updateEvent.distance,
-      updateEvent.series,
-      updateEvent.ageGroup,
-      updateEvent.county,
-      updateEvent.eventURL
-    );
-  }
-  if (result ) {  
-    return res.status(201).send({message: "Event Updated", id:result});
-  } else {
-    return res.status(400).send({message: "Unable to find Event in request. No Event Found in body"});
-  }
-  
-});
 
+ */
 
 export default router;

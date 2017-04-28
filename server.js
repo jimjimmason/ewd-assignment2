@@ -6,8 +6,19 @@ import eventsRouter from './api/events';
 import membersRouter from './api/members';
 import reviewsRouter from './api/reviews';
 import body_parser from 'body-parser';
+import mongoose from 'mongoose';
+import {loadEvents} from './eventsData';
 
 const server = express();
+
+//connect to database
+// mongoose.connect(config.mongoDb);   // this is causing open connecions problem
+mongoose.createConnection(config.mongoDb);
+
+//pupulate DB with sample data
+if (config.seedDb) {
+	loadEvents();
+}
 
 //configure body-parser
 server.use(body_parser.json());
