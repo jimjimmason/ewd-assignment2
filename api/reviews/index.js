@@ -16,17 +16,15 @@ router.get('/', (req, res) => {
 
 //Add a review
 router.post('/', (req, res) => {
-
-     const newReview = req.body;
-    if (newReview){
-           Review.create(newReview, (err, review) => {
-              if(err) { return handleError(res, err); }
-                 return res.status(201).send({review});
-          });
-      }else{
-         return handleError(res, err);
-      }
-     
+  const newReview = req.body;
+  if (newReview){
+    Review.create(newReview, (err, review) => {
+      if(err) { return handleError(res, err); }
+        return res.status(201).send({review});
+      });
+    }else{
+      return handleError(res, err);
+    }
 });
 
 

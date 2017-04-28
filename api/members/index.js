@@ -1,101 +1,70 @@
 import express from 'express';
 import membersAPI from './members';
 import _ from 'lodash';
+import mongoose from 'mongoose';
+import Member from './membersModel';
+import config from './../../config';
+
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const members = membersAPI.getAllMembers();
-  res.send({ members: members });
+ Member.find((err, members) => {
+    if(err) { return handleError(res, err); }
+    return res.send(members);
+  });
 });
 
-//get Member
+// get a member
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  const event = membersAPI.getMember(id);
-
-   if(event){
-           return   res.status(200).send(event);
-          }
-          return    res.status(404).send({message: `Unable to find Event ${id}`}); 
-            
-            
+  Member.findById(id, function (err, member) { 
+    if(err) { return handleError(res, err); }
+    return res.send({member});
+  });
 });
 
-//add Member
+//add member
 router.post('/', (req, res) => {
-	console.log("requst Post newMember");
-  const newMember = req.body;
-  let result = null
-  if (newMember){
-  	result = membersAPI.addMember(
-  		newMember.FirstName,
-  		newMember.Surname,
-  		newMember.Address1,
-  		newMember.Address2,
-  		newMember.Town,
-  		newMember.County,
-  		newMember.Nationality,
-  		newMember.phone_number,
-      newMember.email,
-      newMember.DOB,
-      newMember.gender,
-      newMember.imageUrl,
-      newMember.Type,
-      newMember.TriathlonIrelandID,
-      newMember.Role
-  	);
+  const newEvent = req.body;
+  if (newEvent){
+    Member.create(newEvent, (err, member) => {
+      if(err) { return handleError(res, err); }
+      return res.status(201).send({member});
+    });
+  }else{
+    return handleError(res, err);
   }
-  if (result > 0) {  
-  	return res.status(201).send({message: "Event Created", id:result});
-  }
-   	return res.status(400).send({message: "Unable to find Event in request. No Event Found in body"});
-  
 });
 
-
-//delete Member
+//Delete a member
 router.delete('/:id', (req, res) => {
-	console.log("requst Delete Member");
-  const id = req.params.id;
-  const elements = membersAPI.deleteMember(id);
-	  if (elements){
-	   	res.status(200).send({message: "Member deleted"});
-	  }else{
-        res.status(400).send({message: "Unable to find Member. No event Deleted"}) ;
-	  }
+   let key = req.params.id;
+   Member.findById(key, (err, member)=> {
+    if(err) { return res.status(400).send(err);}
+    if(!member) { return res.send(404); }
+    member.remove(err => {
+      if(err) { return handleError(res, err); }
+      return res.send(member);
+    });
+  });   
 });
 
-
+//Update an member
 router.put('/:id', (req, res) => {
-  console.log("requst Post updateMember");
-  const updateMember = req.body;
-  let result = false;
-  if (newMember){
-    result = membersAPI.updateMember(
-      updateMember.id,
-      updateMember.FirstName,
-      updateMember.Surname,
-      updateMember.Address1,
-      updateMember.Address2,
-      updateMember.Town,
-      updateMember.County,
-      updateMember.Nationality,
-      updateMember.phone_number,
-      updateMember.email,
-      updateMember.DOB,
-      updateMember.gender,
-      updateMember.imageUrl,
-      updateMember.Type,
-      updateMember.TriathlonIrelandID,
-      updateMember.Role
-    );
-  }
-  if (result ) {  
-    return res.status(201).send({message: "Member Updated", id:result});
-  } else {
-    return res.status(400).send({message: "Unable to find Member in request. No Member Found in body"});
-  }
-  
+   let key = req.params.id;
+   let updateMember = req.body;
+
+   if(updateMember._id) { delete updateMember._id; }
+   Member.findById(req.params.id,  (err, member) => {
+      if (err) { return handleError(res, err); }
+        if(!member) { return res.send(404); }
+            const updated = _.merge(member, req.body);
+            updated.save((err) => {
+                  if (err) { return handleError(res, err); }
+                          return res.send(member);
+            });
+      });
 });
+
 export default router;
