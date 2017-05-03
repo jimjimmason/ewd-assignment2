@@ -1,5 +1,5 @@
 import express from 'express';
-import membersAPI from './members';
+//import membersAPI from './members';
 import _ from 'lodash';
 import mongoose from 'mongoose';
 import Member from './membersModel';
@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
  Member.find((err, members) => {
     if(err) { return handleError(res, err); }
-    return res.send(members);
+    return res.send({members});
   });
 });
 

@@ -1,5 +1,5 @@
 import express from 'express';
-import reviewsAPI from './reviews';
+//import reviewsAPI from './reviews';
 import mongoose from 'mongoose';
 import Review from './reviewsModel';
 import config from './../../config';
@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   Review.find((err, reviews) => {
     if(err) { return handleError(res, err); }
-    return res.send(reviews);
+    return res.send({reviews});
   });
 });
 
