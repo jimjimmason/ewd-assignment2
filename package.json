@@ -4,17 +4,27 @@
   "description": "WIT: Enterprise Web Developmetn - Assignment 2",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore TriathlonApp/* --exec babel-node server.js"
+    "start": "cross-env NODE_ENV=development nodemon --ignore TriathlonApp/* --exec babel-node server.js",
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register  --reporter mochawesome"
   },
   "author": "James Mason",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "nodemon": "^1.11.0"
+    "cross-env": "^4.0.0",
+    "moca": "^0.4.3",
+    "mocha": "^3.3.0",
+    "mochawesome": "^2.1.0",
+    "mockgoose": "^7.3.1",
+    "nodemon": "^1.11.0",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
+    "auth0-lock": "^10.15.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "lodash": "^4.17.4",

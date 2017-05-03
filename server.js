@@ -10,12 +10,27 @@ import mongoose from 'mongoose';
 import {loadEvents} from './eventsData';
 import {loadReviews} from './reviewsData';
 import {loadMembers} from './membersData';
+import {Mockgoose} from 'mockgoose';
+import {nodeEnv}  from './config';
 
-const server = express();
+export const server = express();
 
-//connect to database
-// mongoose.connect(config.mongoDb);   // this is causing open connecions problem
-mongoose.createConnection(config.mongoDb);
+// Connect to database
+if (nodeEnv == 'test'){
+	var mockgoose = new Mockgoose(mongoose); 
+	mockgoose.prepareStorage().then(function() {
+  	mongoose.connect(config.mongoDb);
+	});
+} 
+else
+{
+	mongoose.createConnection(config.mongoDb);
+}
+
+mongoose.connection.on('error', function(err) {
+    console.error('MongoDB connection error: '+ err);
+    process.exit(-1);
+});
 
 //pupulate DB with sample data
 if (config.seedDb) {
