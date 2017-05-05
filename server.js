@@ -15,11 +15,12 @@ import {nodeEnv}  from './config';
 
 export const server = express();
 
+
 // Connect to database
 if (nodeEnv == 'test'){
 	var mockgoose = new Mockgoose(mongoose); 
 	mockgoose.prepareStorage().then(function() {
-  	mongoose.connect(config.mongoDb);
+  	mongoose.createConnection(config.mongoDb);
 	});
 } 
 else

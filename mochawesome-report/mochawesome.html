@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Mochawesome Report</title><link rel="stylesheet" href="assets/app.css"/></head><body data-raw="{
   &quot;stats&quot;: {
-    &quot;suites&quot;: 1,
-    &quot;tests&quot;: 4,
-    &quot;passes&quot;: 1,
+    &quot;suites&quot;: 3,
+    &quot;tests&quot;: 12,
+    &quot;passes&quot;: 4,
     &quot;pending&quot;: 0,
-    &quot;failures&quot;: 3,
-    &quot;start&quot;: &quot;2017-05-03T21:18:50.092Z&quot;,
-    &quot;end&quot;: &quot;2017-05-03T21:18:54.656Z&quot;,
-    &quot;duration&quot;: 4564,
-    &quot;testsRegistered&quot;: 4,
-    &quot;passPercent&quot;: 25,
+    &quot;failures&quot;: 8,
+    &quot;start&quot;: &quot;2017-05-05T19:09:43.308Z&quot;,
+    &quot;end&quot;: &quot;2017-05-05T19:09:43.769Z&quot;,
+    &quot;duration&quot;: 461,
+    &quot;testsRegistered&quot;: 12,
+    &quot;passPercent&quot;: 33.3,
     &quot;pendingPercent&quot;: 0,
     &quot;other&quot;: 0,
     &quot;hasOther&quot;: false,
@@ -30,7 +30,7 @@
             &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
             &quot;fullTitle&quot;: &quot;Events API unit tests should return collection of JSON documents&quot;,
             &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 2195,
+            &quot;duration&quot;: 94,
             &quot;state&quot;: &quot;passed&quot;,
             &quot;speed&quot;: &quot;slow&quot;,
             &quot;pass&quot;: true,
@@ -39,46 +39,25 @@
             &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
             &quot;err&quot;: {},
             &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;4a76491b-31cc-4b54-a669-4c4b1c764d68&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+            &quot;uuid&quot;: &quot;027db7ae-c1cf-426f-9aba-cf732e8f6bd8&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
             &quot;skipped&quot;: false
           },
           {
-            &quot;title&quot;: &quot;should add a contact&quot;,
-            &quot;fullTitle&quot;: &quot;Events API unit tests should add a contact&quot;,
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Events API unit tests should add an event&quot;,
             &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 0,
-            &quot;state&quot;: &quot;failed&quot;,
-            &quot;pass&quot;: false,
-            &quot;fail&quot;: true,
+            &quot;duration&quot;: 57,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;medium&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
             &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ name: \&quot;Contact 99\&quot;, address: \&quot;123 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.contact.should.have.property(&#x27;_id&#x27;);\n      res.body.contact.name.should.equal(&#x27;Contact 99&#x27;);\n      done();\n    });&quot;,
-            &quot;err&quot;: {
-              &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-            },
+            &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
             &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;3534f88a-7735-4e1d-a487-1dbf854b5ce9&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-            &quot;skipped&quot;: false
-          },
-          {
-            &quot;title&quot;: &quot;should add and delete contact 999&quot;,
-            &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete contact 999&quot;,
-            &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 0,
-            &quot;state&quot;: &quot;failed&quot;,
-            &quot;pass&quot;: false,
-            &quot;fail&quot;: true,
-            &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ name: \&quot;Contact 999\&quot;, address: \&quot;456 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.name.should.equal(\&quot;Contact 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
-            &quot;err&quot;: {
-              &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:53:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-            },
-            &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;485fb156-e94f-476b-a798-df73483fa455&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+            &quot;uuid&quot;: &quot;9361b819-98f2-4f23-8389-2b1e71afe0a5&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
             &quot;skipped&quot;: false
           },
           {
@@ -90,14 +69,33 @@
             &quot;pass&quot;: false,
             &quot;fail&quot;: true,
             &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0].event._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
             &quot;err&quot;: {
               &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:84:22)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;event&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
             },
             &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;78ed482a-5292-44d0-8079-5968d14215a5&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+            &quot;uuid&quot;: &quot;ee9a5c2c-7d90-442c-8dd9-8fff404975cc&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;eedb5a7a-3b0b-4636-bfea-34bae897bd69&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
             &quot;skipped&quot;: false
           }
         ],
@@ -105,14 +103,14 @@
         &quot;root&quot;: false,
         &quot;_timeout&quot;: 120000,
         &quot;file&quot;: &quot;\\test\\testEventsApi.js&quot;,
-        &quot;uuid&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+        &quot;uuid&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
         &quot;fullFile&quot;: &quot;C:\\EWD\\ewd-assignment2\\test\\testEventsApi.js&quot;,
         &quot;passes&quot;: [
           {
             &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
             &quot;fullTitle&quot;: &quot;Events API unit tests should return collection of JSON documents&quot;,
             &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 2195,
+            &quot;duration&quot;: 94,
             &quot;state&quot;: &quot;passed&quot;,
             &quot;speed&quot;: &quot;slow&quot;,
             &quot;pass&quot;: true,
@@ -121,50 +119,29 @@
             &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
             &quot;err&quot;: {},
             &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;4a76491b-31cc-4b54-a669-4c4b1c764d68&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+            &quot;uuid&quot;: &quot;027db7ae-c1cf-426f-9aba-cf732e8f6bd8&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Events API unit tests should add an event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 57,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;medium&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;9361b819-98f2-4f23-8389-2b1e71afe0a5&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
             &quot;skipped&quot;: false
           }
         ],
         &quot;failures&quot;: [
-          {
-            &quot;title&quot;: &quot;should add a contact&quot;,
-            &quot;fullTitle&quot;: &quot;Events API unit tests should add a contact&quot;,
-            &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 0,
-            &quot;state&quot;: &quot;failed&quot;,
-            &quot;pass&quot;: false,
-            &quot;fail&quot;: true,
-            &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ name: \&quot;Contact 99\&quot;, address: \&quot;123 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.contact.should.have.property(&#x27;_id&#x27;);\n      res.body.contact.name.should.equal(&#x27;Contact 99&#x27;);\n      done();\n    });&quot;,
-            &quot;err&quot;: {
-              &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-            },
-            &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;3534f88a-7735-4e1d-a487-1dbf854b5ce9&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-            &quot;skipped&quot;: false
-          },
-          {
-            &quot;title&quot;: &quot;should add and delete contact 999&quot;,
-            &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete contact 999&quot;,
-            &quot;timedOut&quot;: false,
-            &quot;duration&quot;: 0,
-            &quot;state&quot;: &quot;failed&quot;,
-            &quot;pass&quot;: false,
-            &quot;fail&quot;: true,
-            &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ name: \&quot;Contact 999\&quot;, address: \&quot;456 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.name.should.equal(\&quot;Contact 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
-            &quot;err&quot;: {
-              &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:53:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-            },
-            &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;485fb156-e94f-476b-a798-df73483fa455&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-            &quot;skipped&quot;: false
-          },
           {
             &quot;title&quot;: &quot;should delete event&quot;,
             &quot;fullTitle&quot;: &quot;Events API unit tests should delete event&quot;,
@@ -174,14 +151,211 @@
             &quot;pass&quot;: false,
             &quot;fail&quot;: true,
             &quot;pending&quot;: false,
-            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0].event._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
             &quot;err&quot;: {
               &quot;uncaught&quot;: true,
-              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:84:22)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;event&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
             },
             &quot;isRoot&quot;: false,
-            &quot;uuid&quot;: &quot;78ed482a-5292-44d0-8079-5968d14215a5&quot;,
-            &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+            &quot;uuid&quot;: &quot;ee9a5c2c-7d90-442c-8dd9-8fff404975cc&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;eedb5a7a-3b0b-4636-bfea-34bae897bd69&quot;,
+            &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;skipped&quot;: [],
+        &quot;hasTests&quot;: true,
+        &quot;hasSuites&quot;: false,
+        &quot;totalTests&quot;: 4,
+        &quot;totalPasses&quot;: 2,
+        &quot;totalFailures&quot;: 2,
+        &quot;totalPending&quot;: 0,
+        &quot;totalSkipped&quot;: 0,
+        &quot;hasPasses&quot;: true,
+        &quot;hasFailures&quot;: true,
+        &quot;hasPending&quot;: false,
+        &quot;hasSkipped&quot;: false,
+        &quot;duration&quot;: 151,
+        &quot;rootEmpty&quot;: false
+      },
+      {
+        &quot;title&quot;: &quot;Members API unit tests&quot;,
+        &quot;suites&quot;: [],
+        &quot;tests&quot;: [
+          {
+            &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should return collection of JSON documents&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 18,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;fast&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;71ab65e5-a112-474c-ade7-d912cdd83a24&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should add an event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/members&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;1f68526b-9ca1-4069-a137-b6533df0a603&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should delete event&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should delete event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;8c2324af-a6a4-4c95-86db-44207f6bc98b&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/members/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;68c49f7a-d127-4035-bd25-ac48ed4566d3&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;pending&quot;: [],
+        &quot;root&quot;: false,
+        &quot;_timeout&quot;: 120000,
+        &quot;file&quot;: &quot;\\test\\testMembersApi.js&quot;,
+        &quot;uuid&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+        &quot;fullFile&quot;: &quot;C:\\EWD\\ewd-assignment2\\test\\testMembersApi.js&quot;,
+        &quot;passes&quot;: [
+          {
+            &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should return collection of JSON documents&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 18,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;fast&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;71ab65e5-a112-474c-ade7-d912cdd83a24&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;failures&quot;: [
+          {
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should add an event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/members&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;1f68526b-9ca1-4069-a137-b6533df0a603&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should delete event&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should delete event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;8c2324af-a6a4-4c95-86db-44207f6bc98b&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Members API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/members/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;68c49f7a-d127-4035-bd25-ac48ed4566d3&quot;,
+            &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
             &quot;skipped&quot;: false
           }
         ],
@@ -197,7 +371,185 @@
         &quot;hasFailures&quot;: true,
         &quot;hasPending&quot;: false,
         &quot;hasSkipped&quot;: false,
-        &quot;duration&quot;: 2195,
+        &quot;duration&quot;: 18,
+        &quot;rootEmpty&quot;: false
+      },
+      {
+        &quot;title&quot;: &quot;Reviews API unit tests&quot;,
+        &quot;suites&quot;: [],
+        &quot;tests&quot;: [
+          {
+            &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should return collection of JSON documents&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 15,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;fast&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;5fac7d1b-b44a-4ab6-9f98-5bb9c836ae11&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should add an event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/reviews&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;ReferenceError: handleError is not defined\n    at C:/EWD/ewd-assignment2/api/reviews/index.js:23:24\n    at node_modules\\mongoose\\lib\\model.js:3731:16\n    at node_modules\\mongoose\\lib\\model.js:1925:11\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:35:9\n    at node_modules\\mongoose\\node_modules\\async\\internal\\once.js:12:16\n    at iteratorCallback (node_modules\\mongoose\\node_modules\\async\\eachOf.js:50:13)\n    at node_modules\\mongoose\\node_modules\\async\\internal\\onlyOnce.js:12:16\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:32:13\n    at apply (node_modules\\lodash\\_apply.js:15:25)\n    at node_modules\\lodash\\_overRest.js:32:12\n    at callbackWrapper (node_modules\\mongoose\\lib\\model.js:1907:20)\n    at handleError (node_modules\\hooks-fixed\\hooks.js:40:22)\n    at _next (node_modules\\hooks-fixed\\hooks.js:46:22)\n    at fnWrapper (node_modules\\hooks-fixed\\hooks.js:186:8)\n    at node_modules\\mongoose\\lib\\schema.js:197:17\n    at node_modules\\kareem\\index.js:131:16\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;5ebd959e-ed4c-4fb3-a17e-ce7a27b4a9a4&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should delete event&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should delete event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;ed3692cd-6eba-412f-8073-1da906644139&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/reviews/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;54ba1775-6919-450e-8d1d-864bea1fa596&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;pending&quot;: [],
+        &quot;root&quot;: false,
+        &quot;_timeout&quot;: 120000,
+        &quot;file&quot;: &quot;\\test\\testReviewsApi.js&quot;,
+        &quot;uuid&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+        &quot;fullFile&quot;: &quot;C:\\EWD\\ewd-assignment2\\test\\testReviewsApi.js&quot;,
+        &quot;passes&quot;: [
+          {
+            &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should return collection of JSON documents&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 15,
+            &quot;state&quot;: &quot;passed&quot;,
+            &quot;speed&quot;: &quot;fast&quot;,
+            &quot;pass&quot;: true,
+            &quot;fail&quot;: false,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+            &quot;err&quot;: {},
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;5fac7d1b-b44a-4ab6-9f98-5bb9c836ae11&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;failures&quot;: [
+          {
+            &quot;title&quot;: &quot;should add an event&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should add an event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/reviews&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;ReferenceError: handleError is not defined\n    at C:/EWD/ewd-assignment2/api/reviews/index.js:23:24\n    at node_modules\\mongoose\\lib\\model.js:3731:16\n    at node_modules\\mongoose\\lib\\model.js:1925:11\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:35:9\n    at node_modules\\mongoose\\node_modules\\async\\internal\\once.js:12:16\n    at iteratorCallback (node_modules\\mongoose\\node_modules\\async\\eachOf.js:50:13)\n    at node_modules\\mongoose\\node_modules\\async\\internal\\onlyOnce.js:12:16\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:32:13\n    at apply (node_modules\\lodash\\_apply.js:15:25)\n    at node_modules\\lodash\\_overRest.js:32:12\n    at callbackWrapper (node_modules\\mongoose\\lib\\model.js:1907:20)\n    at handleError (node_modules\\hooks-fixed\\hooks.js:40:22)\n    at _next (node_modules\\hooks-fixed\\hooks.js:46:22)\n    at fnWrapper (node_modules\\hooks-fixed\\hooks.js:186:8)\n    at node_modules\\mongoose\\lib\\schema.js:197:17\n    at node_modules\\kareem\\index.js:131:16\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;5ebd959e-ed4c-4fb3-a17e-ce7a27b4a9a4&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should delete event&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should delete event&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;ed3692cd-6eba-412f-8073-1da906644139&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          },
+          {
+            &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+            &quot;fullTitle&quot;: &quot;Reviews API unit tests should add and delete Event 999&quot;,
+            &quot;timedOut&quot;: false,
+            &quot;duration&quot;: 0,
+            &quot;state&quot;: &quot;failed&quot;,
+            &quot;pass&quot;: false,
+            &quot;fail&quot;: true,
+            &quot;pending&quot;: false,
+            &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/reviews/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+            &quot;err&quot;: {
+              &quot;uncaught&quot;: true,
+              &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+            },
+            &quot;isRoot&quot;: false,
+            &quot;uuid&quot;: &quot;54ba1775-6919-450e-8d1d-864bea1fa596&quot;,
+            &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+            &quot;skipped&quot;: false
+          }
+        ],
+        &quot;skipped&quot;: [],
+        &quot;hasTests&quot;: true,
+        &quot;hasSuites&quot;: false,
+        &quot;totalTests&quot;: 4,
+        &quot;totalPasses&quot;: 1,
+        &quot;totalFailures&quot;: 3,
+        &quot;totalPending&quot;: 0,
+        &quot;totalSkipped&quot;: 0,
+        &quot;hasPasses&quot;: true,
+        &quot;hasFailures&quot;: true,
+        &quot;hasPending&quot;: false,
+        &quot;hasSkipped&quot;: false,
+        &quot;duration&quot;: 15,
         &quot;rootEmpty&quot;: false
       }
     ],
@@ -205,7 +557,7 @@
     &quot;pending&quot;: [],
     &quot;root&quot;: true,
     &quot;_timeout&quot;: 2000,
-    &quot;uuid&quot;: &quot;7479bc19-3827-4379-9018-d160fcada5e5&quot;,
+    &quot;uuid&quot;: &quot;042f19e8-94db-48ac-a510-fe61c3a4c5f1&quot;,
     &quot;fullFile&quot;: &quot;&quot;,
     &quot;file&quot;: &quot;&quot;,
     &quot;passes&quot;: [],
@@ -230,7 +582,7 @@
       &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
       &quot;fullTitle&quot;: &quot;Events API unit tests should return collection of JSON documents&quot;,
       &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 2195,
+      &quot;duration&quot;: 94,
       &quot;state&quot;: &quot;passed&quot;,
       &quot;speed&quot;: &quot;slow&quot;,
       &quot;pass&quot;: true,
@@ -239,46 +591,25 @@
       &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
       &quot;err&quot;: {},
       &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;4a76491b-31cc-4b54-a669-4c4b1c764d68&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+      &quot;uuid&quot;: &quot;027db7ae-c1cf-426f-9aba-cf732e8f6bd8&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
       &quot;skipped&quot;: false
     },
     {
-      &quot;title&quot;: &quot;should add a contact&quot;,
-      &quot;fullTitle&quot;: &quot;Events API unit tests should add a contact&quot;,
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Events API unit tests should add an event&quot;,
       &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 0,
-      &quot;state&quot;: &quot;failed&quot;,
-      &quot;pass&quot;: false,
-      &quot;fail&quot;: true,
+      &quot;duration&quot;: 57,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;medium&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
       &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ name: \&quot;Contact 99\&quot;, address: \&quot;123 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.contact.should.have.property(&#x27;_id&#x27;);\n      res.body.contact.name.should.equal(&#x27;Contact 99&#x27;);\n      done();\n    });&quot;,
-      &quot;err&quot;: {
-        &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-      },
+      &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
       &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;3534f88a-7735-4e1d-a487-1dbf854b5ce9&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-      &quot;skipped&quot;: false
-    },
-    {
-      &quot;title&quot;: &quot;should add and delete contact 999&quot;,
-      &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete contact 999&quot;,
-      &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 0,
-      &quot;state&quot;: &quot;failed&quot;,
-      &quot;pass&quot;: false,
-      &quot;fail&quot;: true,
-      &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ name: \&quot;Contact 999\&quot;, address: \&quot;456 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.name.should.equal(\&quot;Contact 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
-      &quot;err&quot;: {
-        &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:53:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-      },
-      &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;485fb156-e94f-476b-a798-df73483fa455&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+      &quot;uuid&quot;: &quot;9361b819-98f2-4f23-8389-2b1e71afe0a5&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
       &quot;skipped&quot;: false
     },
     {
@@ -290,14 +621,181 @@
       &quot;pass&quot;: false,
       &quot;fail&quot;: true,
       &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0].event._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
       &quot;err&quot;: {
         &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:84:22)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;event&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
       },
       &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;78ed482a-5292-44d0-8079-5968d14215a5&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+      &quot;uuid&quot;: &quot;ee9a5c2c-7d90-442c-8dd9-8fff404975cc&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;eedb5a7a-3b0b-4636-bfea-34bae897bd69&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should return collection of JSON documents&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 18,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;fast&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;71ab65e5-a112-474c-ade7-d912cdd83a24&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should add an event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/members&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;1f68526b-9ca1-4069-a137-b6533df0a603&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should delete event&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should delete event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;8c2324af-a6a4-4c95-86db-44207f6bc98b&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/members/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;68c49f7a-d127-4035-bd25-ac48ed4566d3&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should return collection of JSON documents&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 15,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;fast&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;5fac7d1b-b44a-4ab6-9f98-5bb9c836ae11&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should add an event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/reviews&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;ReferenceError: handleError is not defined\n    at C:/EWD/ewd-assignment2/api/reviews/index.js:23:24\n    at node_modules\\mongoose\\lib\\model.js:3731:16\n    at node_modules\\mongoose\\lib\\model.js:1925:11\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:35:9\n    at node_modules\\mongoose\\node_modules\\async\\internal\\once.js:12:16\n    at iteratorCallback (node_modules\\mongoose\\node_modules\\async\\eachOf.js:50:13)\n    at node_modules\\mongoose\\node_modules\\async\\internal\\onlyOnce.js:12:16\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:32:13\n    at apply (node_modules\\lodash\\_apply.js:15:25)\n    at node_modules\\lodash\\_overRest.js:32:12\n    at callbackWrapper (node_modules\\mongoose\\lib\\model.js:1907:20)\n    at handleError (node_modules\\hooks-fixed\\hooks.js:40:22)\n    at _next (node_modules\\hooks-fixed\\hooks.js:46:22)\n    at fnWrapper (node_modules\\hooks-fixed\\hooks.js:186:8)\n    at node_modules\\mongoose\\lib\\schema.js:197:17\n    at node_modules\\kareem\\index.js:131:16\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;5ebd959e-ed4c-4fb3-a17e-ce7a27b4a9a4&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should delete event&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should delete event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;ed3692cd-6eba-412f-8073-1da906644139&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/reviews/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;54ba1775-6919-450e-8d1d-864bea1fa596&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
       &quot;skipped&quot;: false
     }
   ],
@@ -307,7 +805,7 @@
       &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
       &quot;fullTitle&quot;: &quot;Events API unit tests should return collection of JSON documents&quot;,
       &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 2195,
+      &quot;duration&quot;: 94,
       &quot;state&quot;: &quot;passed&quot;,
       &quot;speed&quot;: &quot;slow&quot;,
       &quot;pass&quot;: true,
@@ -316,50 +814,63 @@
       &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
       &quot;err&quot;: {},
       &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;4a76491b-31cc-4b54-a669-4c4b1c764d68&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+      &quot;uuid&quot;: &quot;027db7ae-c1cf-426f-9aba-cf732e8f6bd8&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Events API unit tests should add an event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 57,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;medium&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;9361b819-98f2-4f23-8389-2b1e71afe0a5&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should return collection of JSON documents&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 18,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;fast&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;71ab65e5-a112-474c-ade7-d912cdd83a24&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should return collection of JSON documents&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should return collection of JSON documents&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 15,
+      &quot;state&quot;: &quot;passed&quot;,
+      &quot;speed&quot;: &quot;fast&quot;,
+      &quot;pass&quot;: true,
+      &quot;fail&quot;: false,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// calling home page api\n    (0, _supertest2.default)(_server.server).get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      // HTTP status should be 200\n      res.status.should.equal(200);\n      done();\n    });&quot;,
+      &quot;err&quot;: {},
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;5fac7d1b-b44a-4ab6-9f98-5bb9c836ae11&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
       &quot;skipped&quot;: false
     }
   ],
   &quot;allFailures&quot;: [
-    {
-      &quot;title&quot;: &quot;should add a contact&quot;,
-      &quot;fullTitle&quot;: &quot;Events API unit tests should add a contact&quot;,
-      &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 0,
-      &quot;state&quot;: &quot;failed&quot;,
-      &quot;pass&quot;: false,
-      &quot;fail&quot;: true,
-      &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/events&#x27;).send({ name: \&quot;Contact 99\&quot;, address: \&quot;123 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.contact.should.have.property(&#x27;_id&#x27;);\n      res.body.contact.name.should.equal(&#x27;Contact 99&#x27;);\n      done();\n    });&quot;,
-      &quot;err&quot;: {
-        &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-      },
-      &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;3534f88a-7735-4e1d-a487-1dbf854b5ce9&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-      &quot;skipped&quot;: false
-    },
-    {
-      &quot;title&quot;: &quot;should add and delete contact 999&quot;,
-      &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete contact 999&quot;,
-      &quot;timedOut&quot;: false,
-      &quot;duration&quot;: 0,
-      &quot;state&quot;: &quot;failed&quot;,
-      &quot;pass&quot;: false,
-      &quot;fail&quot;: true,
-      &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ name: \&quot;Contact 999\&quot;, address: \&quot;456 Strand St\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.name.should.equal(\&quot;Contact 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
-      &quot;err&quot;: {
-        &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:53:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
-      },
-      &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;485fb156-e94f-476b-a798-df73483fa455&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
-      &quot;skipped&quot;: false
-    },
     {
       &quot;title&quot;: &quot;should delete event&quot;,
       &quot;fullTitle&quot;: &quot;Events API unit tests should delete event&quot;,
@@ -369,14 +880,147 @@
       &quot;pass&quot;: false,
       &quot;fail&quot;: true,
       &quot;pending&quot;: false,
-      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0].event._id;\n  superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
       &quot;err&quot;: {
         &quot;uncaught&quot;: true,
-        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:84:22)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;event&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
       },
       &quot;isRoot&quot;: false,
-      &quot;uuid&quot;: &quot;78ed482a-5292-44d0-8079-5968d14215a5&quot;,
-      &quot;parentUUID&quot;: &quot;2f4348cb-5547-432d-b7f7-0ecd9b9c8ec1&quot;,
+      &quot;uuid&quot;: &quot;ee9a5c2c-7d90-442c-8dd9-8fff404975cc&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Events API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/events\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/events\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/events/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/events/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testEventsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;eedb5a7a-3b0b-4636-bfea-34bae897bd69&quot;,
+      &quot;parentUUID&quot;: &quot;8b5f79ab-2489-4084-9285-0289a1d4871a&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should add an event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/members&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;should&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:38:7)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;1f68526b-9ca1-4069-a137-b6533df0a603&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should delete event&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should delete event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;8c2324af-a6a4-4c95-86db-44207f6bc98b&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Members API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/members\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/members\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/members/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/members/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testMembersApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;68c49f7a-d127-4035-bd25-ac48ed4566d3&quot;,
+      &quot;parentUUID&quot;: &quot;73141ba9-849a-463d-a706-31fa7815749d&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add an event&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should add an event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n    // calling home page api\n    (0, _supertest2.default)(_server.server).post(&#x27;/api/reviews&#x27;).send({ eventName: \&quot;NewEvent 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(201).end(function (err, res) {\n      res.status.should.equal(201);\n      res.body.event.should.have.property(&#x27;_id&#x27;);\n      res.body.event.eventName.should.equal(&#x27;NewEvent 999&#x27;);\n      done();\n    });&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;ReferenceError: handleError is not defined\n    at C:/EWD/ewd-assignment2/api/reviews/index.js:23:24\n    at node_modules\\mongoose\\lib\\model.js:3731:16\n    at node_modules\\mongoose\\lib\\model.js:1925:11\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:35:9\n    at node_modules\\mongoose\\node_modules\\async\\internal\\once.js:12:16\n    at iteratorCallback (node_modules\\mongoose\\node_modules\\async\\eachOf.js:50:13)\n    at node_modules\\mongoose\\node_modules\\async\\internal\\onlyOnce.js:12:16\n    at node_modules\\mongoose\\node_modules\\async\\internal\\parallel.js:32:13\n    at apply (node_modules\\lodash\\_apply.js:15:25)\n    at node_modules\\lodash\\_overRest.js:32:12\n    at callbackWrapper (node_modules\\mongoose\\lib\\model.js:1907:20)\n    at handleError (node_modules\\hooks-fixed\\hooks.js:40:22)\n    at _next (node_modules\\hooks-fixed\\hooks.js:46:22)\n    at fnWrapper (node_modules\\hooks-fixed\\hooks.js:186:8)\n    at node_modules\\mongoose\\lib\\schema.js:197:17\n    at node_modules\\kareem\\index.js:131:16\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;5ebd959e-ed4c-4fb3-a17e-ce7a27b4a9a4&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should delete event&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should delete event&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // This is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    res.body._id.should.equal(id);\n    res.body.should.have.property(\&quot;eventName\&quot;);\n    done();\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:54:18)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;ed3692cd-6eba-412f-8073-1da906644139&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
+      &quot;skipped&quot;: false
+    },
+    {
+      &quot;title&quot;: &quot;should add and delete Event 999&quot;,
+      &quot;fullTitle&quot;: &quot;Reviews API unit tests should add and delete Event 999&quot;,
+      &quot;timedOut&quot;: false,
+      &quot;duration&quot;: 0,
+      &quot;state&quot;: &quot;failed&quot;,
+      &quot;pass&quot;: false,
+      &quot;fail&quot;: true,
+      &quot;pending&quot;: false,
+      &quot;code&quot;: &quot;// post to /api/reviews\n// calling home page api\nvar superserver = (0, _supertest2.default)(_server.server);\nsuperserver.get(\&quot;/api/reviews\&quot;).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n.end(function (err, res) {\n  var id = res.body[0]._id;\n  superserver.put(\&quot;/api/reviews/\&quot; + id).send({ eventName: \&quot;Event 999\&quot;, eventType: \&quot;Sprint\&quot; }).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n  .end(function (err, res) {\n    superserver.delete(\&quot;/api/reviews/\&quot; + id).expect(\&quot;Content-type\&quot;, /json/).expect(200) // THis is HTTP response\n    .end(function (err, res) {\n      res.body._id.should.equal(id);\n      res.body.eventName.should.equal(\&quot;Event 999\&quot;);\n      done();\n    });\n  });\n});&quot;,
+      &quot;err&quot;: {
+        &quot;uncaught&quot;: true,
+        &quot;estack&quot;: &quot;TypeError: Cannot read property &#x27;_id&#x27; of undefined\n    at Test.&lt;anonymous&gt; (C:/EWD/ewd-assignment2/test/testReviewsApi.js:78:20)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:179:6)\n    at Server.assert (node_modules\\supertest\\lib\\test.js:131:12)\n    at emitCloseNT (net.js:1555:8)\n    at _combinedTickCallback (internal/process/next_tick.js:71:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)&quot;
+      },
+      &quot;isRoot&quot;: false,
+      &quot;uuid&quot;: &quot;54ba1775-6919-450e-8d1d-864bea1fa596&quot;,
+      &quot;parentUUID&quot;: &quot;8faebb08-8df4-4b43-bbcd-1144e0e15e9b&quot;,
       &quot;skipped&quot;: false
     }
   ],

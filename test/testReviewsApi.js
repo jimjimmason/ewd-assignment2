@@ -5,7 +5,7 @@ import should from "should";
 
 // UNIT test begin
 
-describe("Events API unit tests",function(){
+describe("Reviews API unit tests",function(){
   this.timeout(120000);
 
 // #1 return a collection of json documents
@@ -13,7 +13,7 @@ describe("Events API unit tests",function(){
 
     // calling home page api
     supertest(server)
-    .get("/api/events")
+    .get("/api/reviews")
     .expect("Content-type",/json/)
     .expect(200) // THis is HTTP response
     .end(function(err,res){
@@ -26,10 +26,10 @@ describe("Events API unit tests",function(){
   // #2 add an event
   it("should add an event",function(done){
 
-    // post to /api/events
+    // post to /api/reviews
     // calling home page api
     supertest(server)
-    .post('/api/events')
+    .post('/api/reviews')
     .send({eventName:"NewEvent 999",eventType:"Sprint"})
     .expect("Content-type",/json/)
     .expect(201)
@@ -43,17 +43,17 @@ describe("Events API unit tests",function(){
 
   // #3 delete and event (getting id of first event and delteing this)
   it("should delete event",function(done){
-    // post to /api/events
+    // post to /api/reviews
     // calling home page api
     const superserver = supertest(server);
     superserver
-    .get("/api/events")
+    .get("/api/reviews")
     .expect("Content-type",/json/)
     .expect(200) // This is HTTP response
     .end(function(err,res){
-      const id = res.body[0].event._id;
+      const id = res.body[0]._id;
       superserver
-        .delete("/api/events/"+id)
+        .delete("/api/reviews/"+id)
         .expect("Content-type",/json/)
         .expect(200) // THis is HTTP response
         .end(function(err,res){
@@ -67,23 +67,23 @@ describe("Events API unit tests",function(){
   });
 
   it("should add and delete Event 999",function(done){
-    // post to /api/events
+    // post to /api/reviews
     // calling home page api
     const superserver = supertest(server);
     superserver
-    .get("/api/events")
+    .get("/api/reviews")
     .expect("Content-type",/json/)
     .expect(200) // THis is HTTP response
     .end(function(err,res){
         const id = res.body[0]._id;
         superserver
-        .put("/api/events/"+id)
+        .put("/api/reviews/"+id)
         .send({eventName:"Event 999",eventType:"Sprint"})
         .expect("Content-type",/json/)
         .expect(200) // THis is HTTP response
         .end(function(err,res){
             superserver
-            .delete("/api/events/"+id)
+            .delete("/api/reviews/"+id)
             .expect("Content-type",/json/)
             .expect(200) // THis is HTTP response
             .end(function(err,res){
