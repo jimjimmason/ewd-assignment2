@@ -51,7 +51,7 @@ describe("Events API unit tests",function(){
     .expect("Content-type",/json/)
     .expect(200) // This is HTTP response
     .end(function(err,res){
-      const id = res.body[0].event._id;
+      const id = res.body[0]._id;
       superserver
         .delete("/api/events/"+id)
         .expect("Content-type",/json/)

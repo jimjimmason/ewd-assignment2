@@ -4,6 +4,8 @@ import './App.css'
 import buttons from './utils/MembersButtons';
 //import api from '../api/ReviewsAPI';
 import * as api from './eventsApi';
+import AddEvent from './AddEvent';
+import SearchEvents from './SearchEvents';
 //import { Link } from 'react-router';
 
 //**********************************************************************************
@@ -412,9 +414,31 @@ console.log("delete event: " + k);
   render: function(){
     const filteredEvents = this.state.events;
 
+    // // Filter the events list by search text
+    //   var filteredEvents = events.filter(function(e) {
+    //     return e.eventName.toLowerCase().search(
+    //       this.state.queryText.toLowerCase() ) !== -1;
+    //     }.bind(this) );
+    //     //sort the filtered list by specified order
+    //     filteredEvents = _.sortBy(filteredEvents, this.state.orderBy);
+
+
       return (
          <div >
-             
+          { this.props.isAdministrator ?
+            <AddEvent addHandler={this.addEvent}
+                bodyVisible={this.state.addEventBodyVisible}
+                handleToggleAddEvent={this.toggleAddEventDisplay}
+            />
+            : null
+          }  
+          <SearchEvents
+            orderBy={this.state.orderBy}
+            orderDir={this.state.orderDir}
+            onReOrder={this.reOrder}
+            onSearch={this.searchEvents}
+          />
+
           <EventsTable
             allEvents={filteredEvents}
             isAdministrator={this.props.isAdministrator}

@@ -3,7 +3,7 @@ import Events from '../Events';
 
 var EventInfo = React.createClass({
   render: function(){
-    var isAdministrator = true;
+    var isAdministrator = false;
     console.log("EventInfo	");
     return (
       <div>

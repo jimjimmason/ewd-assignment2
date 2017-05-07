@@ -13,7 +13,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
  Event.find((err, events) => {
     if(err) { return handleError(res, err); }
-    //console.log(events);
     return res.send({events});
   });
 });

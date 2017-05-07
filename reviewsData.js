@@ -1,37 +1,41 @@
 import reviewsModel from './api/reviews/reviewsModel';
 
   const  reviews = [
-         {  id: 1 ,
-            title : 'India - Tiger population sees 30% increase.',
-            link : 'http://www.bbc.com/news/world-asia-30896028',
-            username : 'jbloggs',
-            comments : [],
-            upvotes : 10
-          },
-         { 
-            id: 2,
-            title : 'The button that is not.',
-            link : 'http://blog.nuclearsecrecy.com/2014/12/15/button-isnt/',
-            username : 'notme',
-            comments : [],
-            upvotes : 12
-          },
-          { 
-            id: 3,
-            title : 'Google Nears $1B Investment in SpaceX',
-            link : null,
-            username : 'notme',
-            comments : [],
-            upvotes : 12
-          },
-          { 
-            id: 4,
-            title : 'Coinbase Raises $75M from DFJ Growth, USAA, and More',
-            link : 'http://blog.coinbase.com/review/108642362357/coinbase-raises-75m-from-dfj-growth-usaa-nyse',
-            username : 'psmith',  
-            comments : [],
-            upvotes : 2
-          }
+     {  id: 1 ,
+        title : 'Wiggle - online triathlon store',
+        link : 'http://www.wiggle.co.uk/triathlon/',
+        review: 'Good value for money and Im impressed all round with the service. ',
+        username : 'jbloggs',
+        comments : [],
+        upvotes : 10
+      },
+     { 
+        id: 2,
+        title : 'Kuota Kyron',
+        link : 'http://blog.nuclearsecrecy.com/2014/12/15/button-isnt/',
+        review: 'The Kryon is a good bike and is well made with neat lines and internal cable routing',
+        username : 'Bob',
+        comments : [],
+        upvotes : 12
+      },
+      { 
+        id: 3,
+        title : 'For Sale: MAKO MENS NAMI TRIATHLON WETSUIT',
+        link : null,
+        review: '€95 (175 new) I year old. see review here http://www.irishfit.eu/shop/triathlon/mens-triathlon-wetsuits/mako-mens-nami-triathlon-wetsuit',
+        username : 'notme',
+        comments : [],
+        upvotes : 12
+      },
+      { 
+        id: 4,
+        title : 'Swim, Bike, Run: Our Triathlon Story',
+        link : 'https://www.amazon.co.uk/Swim-Bike-Run-Triathlon-Story/dp/0241965845/ref=sr_1_1?ie=UTF8&qid=1490820635&sr=8-1&keywords=triathlon+books  ',
+        review: 'This is the story of how two skinny lads from west Yorkshire became the best triathletes in the world.',
+        username : 'psmith',  
+        comments : [],
+        upvotes : 2
+      }
       ] ;
 
 

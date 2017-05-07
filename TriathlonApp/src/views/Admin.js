@@ -57,8 +57,9 @@ var Admin = React.createClass({
           <li className={this.state.eventsClassName}><a href="#" onClick={this.handleEventClick}><span className="glyphicon glyphicon-flash"></span> Events</a></li>
           <li className={this.state.otherClassName}><a href="#" onClick={this.handleOtherClick}><span className="glyphicon glyphicon-envelope"></span> Admin</a></li>
         </ul>
-        <Members isAdministrator={this.state.isAdministrator} /> 
-        <Events isAdministrator={this.state.isAdministrator} />
+        {this.state.showMembers ?  <Members isAdministrator={this.state.isAdministrator} /> : null }
+        {this.state.showEvents ?  <Events isAdministrator={this.state.isAdministrator} /> : null }
+        {this.state.showOther ?  <h2>Placeholder for more functionality</h2> : null }
       </div>
     );
   }
