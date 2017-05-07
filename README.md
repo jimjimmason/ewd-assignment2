@@ -83,7 +83,7 @@ cd to client folder: TriathlonApp and run the following to install dependencies 
 
 Application will launch you browser in localhost://3000 
 
-##Aplication Sample Data
+## Aplication Sample Data
 
 Sample Members data
 ```
@@ -180,7 +180,7 @@ This is the same control as the add new member above. note the heading and botto
 Here the members can leave review on events, equipment, books, or offer items for sale.
 
 
-![reviews](https://cloud.githubusercontent.com/assets/25729854/24335909/e6a24e5a-127d-11e7-8bc3-5d9fb290ade3.PNG)
+![reviewspage](https://cloud.githubusercontent.com/assets/25729854/25783106/3eeb39e6-334e-11e7-8b61-c5cdccba8a72.PNG)
 Members can also leave comments on reviews by other members.
 
 
@@ -199,23 +199,23 @@ Members can also leave comments on reviews by other members.
 
 ##Project Structure
 This is the structure of the project. Showing the client app (TriathlonApp) residing inside the server app (ewd-assignment2).
-![projectstructure]
+![projectstructure](https://cloud.githubusercontent.com/assets/25729854/25783107/3eeb636c-334e-11e7-8ef6-9ae91c240a08.PNG)
 
-##API
+## API
 New server side API's created for Events, Reveiws and Members.
 
 
-##RoboMongo
+## RoboMongo
 I used RoboMongo to qurey the collections created in MongoDB.
-![robomongo]
+![robomongo](https://cloud.githubusercontent.com/assets/25729854/25783108/3eec58d0-334e-11e7-978a-c7d9c6c985c7.PNG)
 
-##Postman
+## Postman
 I used Postman to test API's.
-![postman]
+![postman](https://cloud.githubusercontent.com/assets/25729854/25783104/3ee59f36-334e-11e7-8edf-aabda6ab5f53.PNG)
 
-##Mocha, Mochawesome
+## Mocha, Mochawesome
 ##I used Mocha and Mochawesome to test and report on API's.
-![mochawesome]
+![mochawesome](https://cloud.githubusercontent.com/assets/25729854/25783086/12b81ac4-334e-11e7-952a-6be8c155dbcf.PNG)
 
 
 ## Extra features
@@ -225,7 +225,7 @@ This prooved very dificult to implement. The only examples I found for this or s
 Server side API's created and tested with Postman and Mocha / Mochawesome.
 Data storage implemented with MongoDB.
 
-##Problems Encountered
+## Problems Encountered
 - I had to refactor a lot of my original project when I used it as a client app. E.g. Image url's could not be encoded directly into JSX, I had to create variables for the image locations and use the variables in the JSX.
 - My main components would not render in the client. I had to rebuild these components.
 - Yeoman scaffolding for React, created structure for the project, but then I had a lot of Linting issues within the javascript and JSX. I removed the Linting from the project but retained the structure.
@@ -248,7 +248,7 @@ As all these technologies are new to me, I had to do a lot of research in the fo
 + API testing with POSTMAN, Supertest, Mocha, MockGoose
 + Yeoman - framework for React apps.
 
-##Resources I used in researching the topics listed above.
+## Resources I used in researching the topics listed above.
 The Little MongoDB Book - Karl Segion https://github.com/karlseguin/the-little-mongodb-book
 https://modernweb.com/getting-started-reactjs/
 
@@ -258,13 +258,12 @@ http://magic.reactjs.net/htmltojsx.htm
 http://www.favicon.cc/
 
 
-##Tools
+## Tools
 - Sublime Text
 - Haroopad - to create README.md file
 - Postman - to help develop and test API's
 - RoboMongo - to connect and query MongoDB collections.
 
 
-I did not get to implement all the functionality I would like to have done. 
-Implementing Role base autherisation, persisting to a database and allowing more interaction between the components in the application will be the challenge for the second assignment.
+
 
