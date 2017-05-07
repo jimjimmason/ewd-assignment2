@@ -197,7 +197,7 @@ Members can also leave comments on reviews by other members.
  /reviews/:postId - displays view of particular viee (:postId)
 ```
 
-##Project Structure
+## Project Structure
 This is the structure of the project. Showing the client app (TriathlonApp) residing inside the server app (ewd-assignment2).
 ![projectstructure](https://cloud.githubusercontent.com/assets/25729854/25783107/3eeb636c-334e-11e7-8ef6-9ae91c240a08.PNG)
 
