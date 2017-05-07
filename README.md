@@ -141,6 +141,7 @@ Sample of Review data:
 ## App Component Design.
 
 Diagram showing the app's hierarchical component design ). 
+![](http://)
 ![componentlayout](https://cloud.githubusercontent.com/assets/25729854/24335676/3cfd32f0-127a-11e7-8e54-0dfddd7f3f25.PNG)
 
 
@@ -186,13 +187,15 @@ Members can also leave comments on reviews by other members.
 
 ## Routing.
 . . . . List each route supported and state the associated view . . . . . 
-+ /  - root view of app
-+ /events - displays list of events
-+ /about - dispalys general info
-+ /admin - Adminsitrator view - will have ability see multiple views
-+ /register - new user can register 
-+ /reviews  - displays view of all reviews
-+ /reviews/:postId - displays view of particular viee (:postId)
+```
+ /  - root view of app
+ /events - displays list of events
+ /about - dispalys general info
+ /admin - Adminsitrator view - will have ability see multiple views
+ /register - new user can register 
+ /reviews  - displays view of all reviews
+ /reviews/:postId - displays view of particular viee (:postId)
+```
 
 
 
@@ -200,6 +203,7 @@ Members can also leave comments on reviews by other members.
 I used uuid to create unique ids for my data stores. This is a good work around until I implement database storage.
 I tried to implement react-form-validation. This will validate form data e.g required fields, valid email etc.
 This prooved very dificult to implement. The only examples I found for this or similar components were based on simple form submission, rather than the JSX with embedded variables I had in my test.(AddMember.js)
+
 
 
 ## Independent learning.
@@ -212,7 +216,24 @@ As all these technologies are new to me, I had to do a lot of research in the fo
 + Mongoose
 + API deveopment
 + API testing with POSTMAN, Supertest, Mocha, MockGoose
-+ 
++ Yeoman - framework for React apps.
+
+##Resources I used in researching the topics listed above.
+The Little MongoDB Book - Karl Segion https://github.com/karlseguin/the-little-mongodb-book
+https://modernweb.com/getting-started-reactjs/
+
+https://facebook.github.io/react/docs/installation.html
+http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
+http://magic.reactjs.net/htmltojsx.htm
+http://www.favicon.cc/
+
+
+##Tools
+- Sublime Text
+- Haroopad - to create README.md file
+- Postman - to help develop and test API's
+- RoboMongo - to connect and query MongoDB collections.
+
 
 I did not get to implement all the functionality I would like to have done. 
 Implementing Role base autherisation, persisting to a database and allowing more interaction between the components in the application will be the challenge for the second assignment.

@@ -126,6 +126,7 @@ var EventRow = React.createClass({
     //console.log("Enter Event " + this.state.id + ' : ' + this.state.eventName)
     // pass up the event id and let API add the user name to membersCompeting and increment the membersCompetingCount
     this.props.addMemberToEventParticipants(this.state.id);
+    //console.log('calling addMem@ ' + this.state.id)
     this.setState({status : ''});
   },
 
@@ -397,19 +398,15 @@ console.log("delete event: " + k);
       });
   }, //deleteEvent
 
-  addMemberToEventParticipants : function(key){
-    var userName = "bob burger";
-    api.addMemberToEventParticipants(key,userName)
-      .then ( response => {
-         return api.getAllEvents()
-      })
-      .then( response => {
-          //localStorage.clear();
-          //localStorage.setItem('events', JSON.stringify(response)) ;
-          this.setState( {}) ;
-      })
-      .catch( error => {console.log(`Update failed for ${error}` )}  ) ;
-  }, // addMemberToEventParticipants
+  addMemberToEventParticipants : function(id)  {
+    var userName = "This User";
+    api.addMemberToEventParticipants(id).then(resp=> {
+        var updatedEvent = _.find(this.state.events, function(event){return event.id === id;});
+                updatedEvent.membersCompetingCount++;
+                updatedEvent.membersCompeting.push(userName);
+                this.setState({});
+    });
+  },  //addMemberToEventParticipants
 
   render: function(){
     const filteredEvents = this.state.events;

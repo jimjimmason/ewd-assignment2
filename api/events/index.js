@@ -70,24 +70,20 @@ router.put('/:id', (req, res) => {
       });
 });
 
-/*
+
 
 //add addMemberToEventParticipants
-router.post('/:id', (req, res) => {
+router.post('/:id/membersCompeting', (req, res) => {
    const id = req.params.id;
-   const member = req.body;
-   console.log(id);
-   console.log(member)
-   const result = eventsAPI.addMemberToEventParticipants(id,member);
- if (result){
-            return  res.status(200).send({message: `Member added to event ${id}`}); 
-      }
-            return   res.status(400).send({message: `Unable to add Member to event ${id}`});
-           
-             
+   const membersCompeting = req.body;
+   Event.findById(id, (err, event)=>{ 
+        if(err) { return handleError(res, err); }
+        event.membersCompeting.push(membersCompeting);
+        event.save(err => {
+          if (err) {return handleError(res, err);}
+           return res.status(201).send({event});
+        });
+    });         
 });
-
-
- */
 
 export default router;

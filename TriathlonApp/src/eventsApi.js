@@ -49,7 +49,7 @@ export const updateEvent = (id,eDate, eName,eType,distance,series,ageGroup,count
   .then(resp => resp.data);
 };
 
-export const addMemberToEventParticipants = (eventId,member) => {
-  return axios.post(`/api/events/${eventId}`)
+export const addMemberToEventParticipants = id => {
+  return axios.post(`/api/events/${id}/addMemberToEventParticipants`)
               .then(resp => resp.data);
 };
