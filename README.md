@@ -197,13 +197,43 @@ Members can also leave comments on reviews by other members.
  /reviews/:postId - displays view of particular viee (:postId)
 ```
 
+##Project Structure
+This is the structure of the project. Showing the client app (TriathlonApp) residing inside the server app (ewd-assignment2).
+![projectstructure]
+
+##API
+New server side API's created for Events, Reveiws and Members.
+
+
+##RoboMongo
+I used RoboMongo to qurey the collections created in MongoDB.
+![robomongo]
+
+##Postman
+I used Postman to test API's.
+![postman]
+
+##Mocha, Mochawesome
+##I used Mocha and Mochawesome to test and report on API's.
+![mochawesome]
 
 
 ## Extra features
 I used uuid to create unique ids for my data stores. This is a good work around until I implement database storage.
 I tried to implement react-form-validation. This will validate form data e.g required fields, valid email etc.
 This prooved very dificult to implement. The only examples I found for this or similar components were based on simple form submission, rather than the JSX with embedded variables I had in my test.(AddMember.js)
+Server side API's created and tested with Postman and Mocha / Mochawesome.
+Data storage implemented with MongoDB.
 
+##Problems Encountered
+- I had to refactor a lot of my original project when I used it as a client app. E.g. Image url's could not be encoded directly into JSX, I had to create variables for the image locations and use the variables in the JSX.
+- My main components would not render in the client. I had to rebuild these components.
+- Yeoman scaffolding for React, created structure for the project, but then I had a lot of Linting issues within the javascript and JSX. I removed the Linting from the project but retained the structure.
+- I had difficulty getting sample code from the labs to work. A lot of errors / typos. This took a lot of time to resolve. 
+ -	e.g.  in node_lab3/api/contacts/index.js
+ -	return res.send(contacts);   
+ -	should be return res.send({contacts});
+ -	This was difficult to debug as there were no errors indicating the problem.
 
 
 ## Independent learning.
