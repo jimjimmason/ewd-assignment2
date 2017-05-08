@@ -203,10 +203,27 @@ This is the structure of the project. Showing the client app (TriathlonApp) resi
 
 ## API
 New server side API's created for Events, Reveiws and Members.
-| Method   | Endpoint                           | Usage             | Returns    |
-| -------- | ---------------------------------- | ----------------- | ---------- |
-| GET      | ../api/events/                     | Get all Events    | Events     |
-| GET      | ../api/events/                     | Get specific Event| Event      |
+
+| Method        | Endpoint           | Usage        | Returns  |
+| ------------- | ------------- | ----- | --------------- |
+| GET | localhost:8080/api/events/ | Get all events | Events |
+| GET | localhost:8080/api/events/{id} | Get specific event | Event |
+| POST | localhost:8080/api/events/      | Add and event | Event |
+| PUT | localhost:8080/api/events/{id} | Update an event | Event |
+| DELETE | localhost:8080/api/events/{id} | Delete and event | Event |
+| POST | localhost:8080/api/events/{id}/membersCompeting | Add Member name to an event | Event |
+| GET | localhost:8080/api/reviews/ | Get all reviews | Reviews |
+| GET | localhost:8080/api/reviews/{id} | Get specific review | Review |
+| POST | localhost:8080/api/reviews/      | Add and review | Review |
+| PUT | localhost:8080/api/reviews/{id} | Update a review | Review |
+| DELETE | localhost:8080/api/reviews/{id} | Delete and review | Review |
+| POST | localhost:8080/api/reviews/{id}/upvote | Upvote a review | Review |
+| GET | localhost:8080/api/members/ | Get all members | Members |
+| GET | localhost:8080/api/members/{id} | Get specific member | Member |
+| POST | localhost:8080/api/members/      | Add and member | Member |
+| PUT | localhost:8080/api/members/{id} | Update a member | Member |
+| DELETE | localhost:8080/api/members/{id} | Delete and member | Member |
+
 
 
 ## RoboMongo
