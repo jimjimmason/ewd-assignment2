@@ -203,6 +203,10 @@ This is the structure of the project. Showing the client app (TriathlonApp) resi
 
 ## API
 New server side API's created for Events, Reveiws and Members.
+| Method   | Endpoint                           | Usage             | Returns    |
+| -------- | ---------------------------------- | ----------------- | ---------- |
+| GET      | ../api/events/                     | Get all Events    | Events     |
+| GET      | ../api/events/                     | Get specific Event| Event      |
 
 
 ## RoboMongo
